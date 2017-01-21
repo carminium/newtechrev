@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{pagetitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="custom-page">
+
+<DynamicComponent 
+    [componentTemplateUrl]="templateUrl" 
+    [componentModules]="extraModules"
+    [componentInputData]="inputData"></DynamicComponent>
+
+</ion-content>

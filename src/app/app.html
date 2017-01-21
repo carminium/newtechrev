@@ -1,0 +1,31 @@
+<div [innerHTML]="styles"></div>
+
+<ion-menu *ngIf="pages" [content]="content" swipeEnabled="false">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-list-header text-wrap *ngIf="loggedin_msg">
+        <!-- <ion-avatar>
+          <img src="img/icon-user-default.png">
+        </ion-avatar> -->
+        <span class="loggedin-msg"><b>{{loggedin_msg}}</b></span>
+      </ion-list-header>
+
+      <button [ngClass]="p.extra_classes" ion-item *ngFor="let p of pages" (click)="menuLink(p)">
+        <ion-icon *ngIf="p.class" name="{{p.class}}" item-left></ion-icon>
+        {{p.title}}
+      </button>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" #content swipeBackEnabled="false"></ion-nav>
